@@ -41,3 +41,15 @@ def test_Register_002_Negative(driver):
     time.sleep(2)
     driver.find_element(By.CSS_SELECTOR, '#new_user > div:nth-child(3) > div.form-text.text-danger').is_displayed()
     time.sleep(2)
+
+#Test case for checking email is correct or not
+def test_Register_003_Negative(driver):
+    time.sleep(2)
+    driver.find_element(By.CLASS_NAME, 'ms-auto').click()
+    time.sleep(2)
+    driver.find_element(By.LINK_TEXT, 'Daftar di sini').click()
+    time.sleep(2)
+    driver.find_element(By.ID, 'user_name').send_keys('Testing Selenium')
+    email = driver.find_element(By.ID, 'user_email').send_keys('testingselenium')
+    driver.find_element(By.ID, 'user_password').send_keys('testing' + Keys.ENTER)
+    time.sleep(2)
