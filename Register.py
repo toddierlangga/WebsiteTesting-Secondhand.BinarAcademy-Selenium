@@ -53,3 +53,4 @@ def test_Register_003_Negative(driver):
     email = driver.find_element(By.ID, 'user_email').send_keys('testingselenium')
     driver.find_element(By.ID, 'user_password').send_keys('testing' + Keys.ENTER)
     time.sleep(2)
+    
