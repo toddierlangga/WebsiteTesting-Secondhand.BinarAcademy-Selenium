@@ -21,6 +21,7 @@ def test_logout(driver):
     driver.find_element(By.ID, 'user_password').send_keys('testing' + Keys.ENTER)
     time.sleep(2)
     driver.find_element(By.XPATH, '//*[@id="navbarSupportedContent"]/div/ul/li[6]/a/i').click()
+    time.sleep(1)
     driver.find_element(By.XPATH, '//*[@id="navbarSupportedContent"]/div/ul/li[6]/ul/li[3]/form/button').click()
     driver.find_element(By.CLASS_NAME, 'ms-auto').is_displayed()
     time.sleep(5)
