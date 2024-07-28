@@ -11,12 +11,12 @@
 >> ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 > Library
->> Selenium
->> Keys
->> By
->> Select
->> Time
->> Pynput
+>> Selenium <br>
+>> Keys <br>
+>> By <br>
+>> Select <br>
+>> Time <br>
+>> Pynput <br>
 
 > Framework
 >> Pytest
