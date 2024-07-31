@@ -72,11 +72,17 @@ def test_Register_005_Negative(driver):
     time.sleep(2)
     driver.find_element(By.LINK_TEXT, 'Daftar di sini').click()
     time.sleep(2)
-    driver.find_element(By.ID, 'user_email').send_keys('testingselenium')
+    driver.find_element(By.ID, 'user_email').send_keys('testingselenium@testing.com')
     driver.find_element(By.ID, 'user_password').send_keys('testing' + Keys.ENTER)
     time.sleep(2)
-    if(driver.find_element(By.ID, 'user_name').get_attribute('required')):
+    try:
+        WebDriverWait(driver, 2).until(
+            EC.presence_of_element_located((By.XPATH, "//*[@id='user_name'='Please fill out this field.']"))
+        )
         time.sleep(2)
+        assert True  # If the notification is found, the test case is successful.
+    except:
+        assert False  # If the notification is found, the test case is fail.
 
 #Test case for user register without fill email field
 def test_Register_006_Negative(driver):
