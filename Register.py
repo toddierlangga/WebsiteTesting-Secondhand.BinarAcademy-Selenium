@@ -62,7 +62,7 @@ def test_Register_004_Negative(driver):
     driver.find_element(By.ID, 'user_email').send_keys('testingselenium@testing.com')
     driver.find_element(By.ID, 'user_password').send_keys('testing' + Keys.ENTER)
     time.sleep(2)
-    driver.find_element(By.CSS_SELECTOR, '#new_user > div:nth-child(3) > div.form-text.text-danger').is_displayed()
+    assert driver.find_element(By.CSS_SELECTOR, '#new_user > div:nth-child(3) > div.form-text.text-danger').is_displayed()
     time.sleep(2)
 
 #Test case for user register without fill name field
