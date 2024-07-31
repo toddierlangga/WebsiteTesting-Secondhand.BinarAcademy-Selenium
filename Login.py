@@ -102,5 +102,3 @@ def test_Login_006_Negative(driver):
     driver.find_element(By.ID, 'user_password').send_keys('testing_')
     driver.find_element(By.NAME, 'commit').click()
     assert WebDriverWait(driver,2).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div')))
-
-
