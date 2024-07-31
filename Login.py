@@ -22,8 +22,8 @@ def test_Login_001_Positive(driver):
     driver.find_element(By.ID, 'user_email').send_keys('testingselenium@testing.com')
     driver.find_element(By.ID, 'user_password').send_keys('testing' + Keys.ENTER)
     time.sleep(2)
-    driver.find_element(By.XPATH, '//*[@id="navbarSupportedContent"]/div/ul/li[6]/a/i').is_displayed()
-    time.sleep(5)
+    assert driver.find_element(By.XPATH, '//*[@id="navbarSupportedContent"]/div/ul/li[6]/a/i').is_displayed()
+    time.sleep(3)
 
 #Test case for login without fill form
 def test_Login_002_Negative(driver):
@@ -35,7 +35,6 @@ def test_Login_002_Negative(driver):
     password = driver.find_element(By.ID, 'user_password')
     password.clear()
     driver.find_element(By.NAME, 'commit').click()
-
     try:
         WebDriverWait(driver, 2).until(
             EC.presence_of_element_located((By.XPATH, "//*[@id='user_email'='Please fill out this field.']"))
