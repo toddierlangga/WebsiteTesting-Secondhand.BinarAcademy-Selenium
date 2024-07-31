@@ -36,8 +36,14 @@ def test_Login_002_Negative(driver):
     password.clear()
     driver.find_element(By.NAME, 'commit').click()
 
-    if(email.get_attribute('required') and password.get_attribute('required')):
-        time.sleep(5)
+    try:
+        WebDriverWait(driver, 2).until(
+            EC.presence_of_element_located((By.XPATH, "//*[@id='user_email'='Please fill out this field.']"))
+        )
+        time.sleep(2)
+        assert True  # If the notification is found, the test case is successful.
+    except:
+        assert False  # If the notification is found, the test case is fail.
 
 #Test case for login without fill password
 def test_Login_003_Negative(driver):
@@ -49,8 +55,14 @@ def test_Login_003_Negative(driver):
     password.clear()
     driver.find_element(By.NAME, 'commit').click()
 
-    if(password.get_attribute('required')):
-        time.sleep(5)
+    try:
+        WebDriverWait(driver, 2).until(
+            EC.presence_of_element_located((By.XPATH, "//*[@id='user_password'='Please fill out this field.']"))
+        )
+        time.sleep(2)
+        assert True  # If the notification is found, the test case is successful.
+    except:
+        assert False  # If the notification is found, the test case is fail.
 
 #Test case for login without fill email
 def test_Login_004_Negative(driver):
@@ -62,8 +74,14 @@ def test_Login_004_Negative(driver):
     driver.find_element(By.ID, 'user_password').send_keys('testing')
     driver.find_element(By.NAME, 'commit').click()
 
-    if(email.get_attribute('required')):
-        time.sleep(5)
+    try:
+        WebDriverWait(driver, 2).until(
+            EC.presence_of_element_located((By.XPATH, "//*[@id='user_email'='Please fill out this field.']"))
+        )
+        time.sleep(2)
+        assert True  # If the notification is found, the test case is successful.
+    except:
+        assert False  # If the notification is found, the test case is fail.
 
 #Test case for login within fill wrong email
 def test_Login_005_Negative(driver):
