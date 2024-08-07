@@ -22,10 +22,11 @@
 >> Pytest
 
 Automation Used:<br>
-*Selenium python<br>
+*Selenium Version 4.21.0<br>
+*Python Version 3.11.8<br>
 
 
-Browser For Testing : <br>
+Browser for Testing : <br>
 
 \*Google Chrome Version 126.x.xxxxx.xxx <br>
 
